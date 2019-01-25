@@ -1,7 +1,7 @@
 const db = require("../lib/db");
 const server = require("../lib/server");
 
-const cliRouter = require("../routers/cli");
+const cliRouter = require("../routers/cli.router");
 // TODO: Load more routers
 
 const config = {
