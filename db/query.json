@@ -1,5 +1,7 @@
 {
     "cli/001": "insert into ord set id_cli=?",
+    "cli/all": "select * from cli",
+    "cli/find": "select * from cli where nombre like ?",
     "vend/002": [
         "update ord set id_vend=?",
         "update ord set estatus=5, fecha_mod=now()"
