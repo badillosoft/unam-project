@@ -1,6 +1,5 @@
 const express = require("express");
 
-const db = require("../lib/db");
 const auth = require("../lib/auth");
 
 const router = express.Router();
