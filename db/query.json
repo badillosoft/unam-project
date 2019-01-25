@@ -1,0 +1,7 @@
+{
+    "cli/001": "insert into ord set id_cli=?",
+    "vend/002": [
+        "update ord set id_vend=?",
+        "update ord set estatus=5, fecha_mod=now()"
+    ]
+}

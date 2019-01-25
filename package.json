@@ -1,0 +1,30 @@
+{
+  "name": "unam-project",
+  "version": "1.0.0",
+  "description": "UNAM Template Project",
+  "main": "main.js",
+  "directories": {
+    "lib": "lib",
+    "test": "test"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/badillosoft/unam-project.git"
+  },
+  "keywords": [
+    "express",
+    "mysql"
+  ],
+  "author": "unam",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/badillosoft/unam-project/issues"
+  },
+  "homepage": "https://github.com/badillosoft/unam-project#readme",
+  "dependencies": {
+    "mysql": "^2.16.0"
+  }
+}
