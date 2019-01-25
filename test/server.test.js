@@ -1,5 +1,9 @@
+const auth = require("../lib/auth");
 const db = require("../lib/db");
 const server = require("../lib/server");
+
+const cliAuthRouter = require("../auth/cli.auth");
+// TODO: Load more auths
 
 const cliRouter = require("../routers/cli.router");
 // TODO: Load more routers
@@ -13,6 +17,11 @@ const config = {
 
 async function test() {
     await db.connect(config);
+
+    await auth.mount();
+
+    await server.addRouter(cliAuthRouter);
+    // TODO: Add other auth routers
 
     await server.addRouter(cliRouter);
     // TODO: Add other routers
