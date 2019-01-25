@@ -12,7 +12,14 @@ async function test() {
 
     await db.loadQueries();
 
-    
+    const result1 = await db.query("select * from cup where precio=?", 21);
+    console.log(result1);
+
+    const result2 = await db.queryNamed("cup/001");
+    console.log(result2);
+
+    const result3 = await db.queryNamed("cup/002", 20, 22, 19);
+    console.log(result3);
 
     db.disconnect();
 }

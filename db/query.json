@@ -3,5 +3,11 @@
     "vend/002": [
         "update ord set id_vend=?",
         "update ord set estatus=5, fecha_mod=now()"
+    ],
+    "cup/001": "select * from cup",
+    "cup/002": [
+        "select * from cup where precio > ?",
+        "select * from cup where precio < ?",
+        "select * from cup where precio = ?"
     ]
 }
