@@ -8,20 +8,32 @@ const config = {
 };
 
 async function test() {
-    await db.connect(config);
+    try {
+        await db.connect(config);
 
-    await db.loadQueries();
+        await db.loadQueries();
 
-    const result1 = await db.query("select * from cup where precio=?", 21);
-    console.log(result1);
+        const result1 = await db.query("select ,* from cup where precio=?", 21);
+        console.log(result1);
 
-    const result2 = await db.queryNamed("cup/001");
-    console.log(result2);
+        const result2 = await db.queryNamed("cup/001");
+        console.log(result2);
 
-    const result3 = await db.queryNamed("cup/002", 20, 22, 19);
-    console.log(result3);
+        const result3 = await db.queryNamed("cup/002", 20, 22, 19);
+        console.log(result3);
 
-    db.disconnect();
+        db.queries = {
+            "a001": "select now() as fecha_act",
+            "a002": "select random()"
+        };
+
+        const result4 = await db.queryNamed("a001");
+        console.log(result4);
+
+    } catch(err) {
+        console.log(err.toString());
+    }
+    await db.disconnect();
 }
 
 test();
